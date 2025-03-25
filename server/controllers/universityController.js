@@ -29,8 +29,6 @@ const createUniversity = async (req, res) => {
   }
 };
 
-
-// Get all universities
 // Get all universities
 const getUniversities = async (req, res) => {
   try {
@@ -49,18 +47,10 @@ const getUniversities = async (req, res) => {
     // Filter by ranking
     if (req.query.minRanking) {
       const minRanking = Number(req.query.minRanking); // Ensure it's a Number
-      console.log("Parsed minRanking:", minRanking, "Type:", typeof minRanking);
-
       if (!isNaN(minRanking)) {
         query.ranking = { $gte: minRanking };
       }
     }
-
-    if (req.query.program) {
-      query.programs = { $regex: req.query.program, $options: "i" };
-    }
-
-    console.log("Final MongoDB Query:", JSON.stringify(query));
 
     // Sorting (default: ranking ascending)
     let sortOption = { ranking: 1 }; // Default sorting by ranking ASC
@@ -75,17 +65,32 @@ const getUniversities = async (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
+    // Aggregation pipeline
+    const pipeline = [
+      { $match: query },
+      {
+        $lookup: {
+          from: "programs",
+          localField: "programs",
+          foreignField: "_id",
+          as: "programs",
+        },
+      },
+      {
+        $match: req.query.program
+          ? { "programs.name": { $regex: req.query.program, $options: "i" } }
+          : {},
+      },
+      { $sort: sortOption },
+      { $skip: skip },
+      { $limit: limit },
+    ];
+
     // Fetch universities
-    const universities = await University.find(query)
-      .populate("programs")
-      .sort(sortOption)
-      .skip(skip)
-      .limit(limit);
+    const universities = await University.aggregate(pipeline);
 
     // Total count for pagination metadata
     const total = await University.countDocuments(query);
-
-    console.log("Filtered universities:", universities.length);
 
     res.json({
       total,
@@ -98,8 +103,6 @@ const getUniversities = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 };
-
-
 
 // Get a single university by ID
 const getUniversityById = async (req, res) => {
