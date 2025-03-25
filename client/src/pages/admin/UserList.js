@@ -7,8 +7,16 @@ const UserList = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        console.error("No token found");
+        return;
+      }
+
       try {
-        const response = await axios.get("http://localhost:6969/api/user");
+        const response = await axios.get("http://localhost:6969/api/admin/users", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -20,9 +28,17 @@ const UserList = () => {
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
-    
+
+    const token = localStorage.getItem("token");
+    if (!token) {
+      console.error("No token found");
+      return;
+    }
+
     try {
-      await axios.delete(`/api/user/${id}`);
+      await axios.delete(`http://localhost:6969/api/admin/users/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setUsers(users.filter((user) => user._id !== id));
     } catch (error) {
       console.error("Error deleting user:", error);

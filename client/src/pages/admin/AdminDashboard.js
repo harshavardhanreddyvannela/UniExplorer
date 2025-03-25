@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Container, Row, Col, Card, CardBody, CardTitle, Button } from "reactstrap";
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState({
@@ -12,15 +12,27 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchStats = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        console.error("No token found");
+        return;
+      }
+
       try {
-        const uniRes = await axios.get("http://localhost:6969/api/universities");
-        const progRes = await axios.get("http://localhost:6969/api/programs");
-        const userRes = await axios.get("http://localhost:6969/api/user");
+        const uniRes = await axios.get("http://localhost:6969/api/universities", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const progRes = await axios.get("http://localhost:6969/api/programs", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        const userRes = await axios.get("http://localhost:6969/api/admin/users", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
         setStats({
-          universities: uniRes.data.total,
-          programs: progRes.data.total,
-          users: userRes.data.total,
+          universities: uniRes.data.universities.length,
+          programs: progRes.data.programs.length,
+          users: userRes.data.length,
         });
       } catch (error) {
         console.error("Error fetching stats:", error);
@@ -39,6 +51,7 @@ const AdminDashboard = () => {
               <CardTitle tag="h5">Total Universities</CardTitle>
               <h3>{stats.universities}</h3>
               <Link to="/admin/universities" className="btn btn-primary">Manage</Link>
+              <Button color="success" className="mt-2" onClick={() => window.location.href = "/admin/universities/add"}>Add University</Button>
             </CardBody>
           </Card>
         </Col>
@@ -48,6 +61,7 @@ const AdminDashboard = () => {
               <CardTitle tag="h5">Total Programs</CardTitle>
               <h3>{stats.programs}</h3>
               <Link to="/admin/programs" className="btn btn-primary">Manage</Link>
+              <Button color="success" className="mt-2" onClick={() => window.location.href = "/admin/programs/add"}>Add Program</Button>
             </CardBody>
           </Card>
         </Col>
@@ -57,6 +71,7 @@ const AdminDashboard = () => {
               <CardTitle tag="h5">Total Users</CardTitle>
               <h3>{stats.users}</h3>
               <Link to="/admin/users" className="btn btn-primary">Manage</Link>
+              <Button color="success" className="mt-2" onClick={() => window.location.href = "/admin/users/add"}>Add User</Button>
             </CardBody>
           </Card>
         </Col>

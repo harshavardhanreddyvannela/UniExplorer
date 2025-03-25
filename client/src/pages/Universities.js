@@ -71,7 +71,7 @@ const Universities = () => {
       alert("You must be logged in to add favorites!");
       return;
     }
-
+  
     try {
       if (favorites.includes(universityId)) {
         await axios.delete(`http://localhost:6969/api/user/favorites/${universityId}`, {

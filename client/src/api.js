@@ -4,7 +4,7 @@ export const fetchUniversities = async () => {
   try {
     const response = await fetch(`${API_BASE_URL}/universities`);
     const data = await response.json();
-    return Array.isArray(data.universities) ? data.universities : [];
+    return data.universities;
   } catch (error) {
     console.error("Error fetching universities:", error);
     return [];

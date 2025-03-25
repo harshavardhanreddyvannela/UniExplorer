@@ -9,7 +9,7 @@ const UniversityList = () => {
     const fetchUniversities = async () => {
       try {
         const res = await axios.get("http://localhost:6969/api/universities");
-        setUniversities(res.data.universities);
+        setUniversities(res.data.universities || []);
       } catch (error) {
         console.error("Error fetching universities:", error);
       }
@@ -18,8 +18,16 @@ const UniversityList = () => {
   }, []);
 
   const handleDelete = async (id) => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      console.error("No token found");
+      return;
+    }
+
     try {
-      await axios.delete(`/api/universities/${id}`);
+      await axios.delete(`http://localhost:6969/api/universities/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setUniversities(universities.filter((uni) => uni._id !== id));
     } catch (error) {
       console.error("Error deleting university:", error);
