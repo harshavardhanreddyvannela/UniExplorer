@@ -60,9 +60,9 @@ const getUniversities = async (req, res) => {
       sortOption = { [sortField]: sortOrder };
     }
 
-    // Pagination
+    // Pagination - modified to return all results by default
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
+    const limit = parseInt(req.query.limit) || 1000; // Increased from 10 to 1000
     const skip = (page - 1) * limit;
 
     // Aggregation pipeline

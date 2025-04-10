@@ -102,7 +102,7 @@ const UniversityDetails = () => {
                   <tr key={program._id}>
                     <td>{index + 1}</td>
                     <td>{program.name}</td>
-                    <td>{program.degree || "N/A"}</td>
+                    <td>{program.degreeType || "N/A"}</td>
                     <td>{program.duration || "N/A"}</td>
                   </tr>
                 ))}
