@@ -1,0 +1,16 @@
+pyproject.toml
+scrapers/__init__.py
+scrapers/australia.py
+scrapers/canada.py
+scrapers/england.py
+scrapers/ireland.py
+scrapers/new_zealand.py
+scrapers/northern_ireland.py
+scrapers/scotland.py
+scrapers/united_states.py
+scrapers/wales.py
+uniexplorer.egg-info/PKG-INFO
+uniexplorer.egg-info/SOURCES.txt
+uniexplorer.egg-info/dependency_links.txt
+uniexplorer.egg-info/requires.txt
+uniexplorer.egg-info/top_level.txt
