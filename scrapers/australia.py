@@ -8,7 +8,7 @@ from typing import List, Dict
 
 def scrape_universities(url: str) -> List[Dict[str, str]]:
     """
-    Scrape universities from the provided URL for Australia.
+    Scrape universities from the Study Australia website.
     
     Args:
         url: The website URL to scrape
@@ -22,20 +22,25 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # TODO: Customize HTML parsing logic for Australia's specific website structure
-        # Example:
-        # uni_elements = soup.find_all('div', class_='university-item')
-        # for elem in uni_elements:
-        #     name = elem.find('h2').text.strip()
-        #     website = elem.find('a', class_='uni-link')['href']
-        #     universities.append({'name': name, 'website': website})
-        
-        print(f"Scraped {len(universities)} universities from Australia")
+        # Find all h2 tags containing university links
+        for h2 in soup.find_all('h2'):
+            link = h2.find('a', href=True)
+            if link:
+                # Get name from full h2 text (not just link text)
+                name = h2.get_text(strip=True)
+                website = link['href']
+                
+                # Keep only valid university entries
+                if name and website and '.edu.au' in website:
+                    universities.append({
+                        'name': name,
+                        'website': website
+                    })
         
     except requests.exceptions.RequestException as e:
         print(f"Error scraping Australia: {str(e)}")
@@ -44,9 +49,12 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
     
     return universities
 
+
 if __name__ == "__main__":
     # Test scraper
-    test_url = "https://example.com/australia"
+    test_url = "https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities"
     results = scrape_universities(test_url)
+    
+    print(f"Found {len(results)} universities:")
     for uni in results:
-        print(f"- {uni['name']}: {uni['website']}")
+        print(f"  - {uni['name']}: {uni['website']}")

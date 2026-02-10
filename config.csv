@@ -1,10 +1,10 @@
 country,url
-Scotland,https://example.com/scotland
-Wales,https://example.com/wales
-Northern Ireland,https://example.com/northern-ireland
-England,https://example.com/england
-Ireland,https://example.com/ireland
+Scotland,https://www.gov.scot/policies/universities/
+Wales,https://www.gov.uk/check-university-award-degree/recognised-bodies-wales
+Northern Ireland,https://www.economy-ni.gov.uk/articles/higher-education-policy
+England,https://register-api.officeforstudents.org.uk/api/Download/
+Ireland,https://www.gov.ie/en/department-of-further-and-higher-education-research-innovation-and-science/publications/list-of-publicly-funded-higher-education-institutions-universities-and-colleges/
 Canada,https://example.com/canada
-Australia,https://example.com/australia
-New Zealand,https://example.com/new-zealand
+Australia,https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities
+New Zealand,https://www.educationcounts.govt.nz/__data/assets/file/0006/62574/tertiary-providers-directory-02022026.xlsx
 United States,https://example.com/united-states

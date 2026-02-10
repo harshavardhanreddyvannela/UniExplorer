@@ -27,13 +27,36 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # TODO: Customize HTML parsing logic for Scotland's specific website structure
-        # Example:
-        # uni_elements = soup.find_all('div', class_='university-item')
-        # for elem in uni_elements:
-        #     name = elem.find('h2').text.strip()
-        #     website = elem.find('a', class_='uni-link')['href']
-        #     universities.append({'name': name, 'website': website})
+        # Find the heading "Recognised bodies" (some pages include extra whitespace)
+        recognised_heading = None
+        for heading in soup.find_all(['h2', 'h3']):
+            if heading.get_text(strip=True) == 'Recognised bodies':
+                recognised_heading = heading
+                break
+        
+        if recognised_heading:
+            # Walk siblings until the next heading and collect links in lists
+            current = recognised_heading.find_next_sibling()
+            seen = set()
+            
+            while current and current.name not in ['h2', 'h3']:
+                for link in current.find_all('a', href=True):
+                    name = link.get_text(strip=True)
+                    website = link.get('href', '').strip()
+                    if not name or not website.startswith('http'):
+                        continue
+                    # Keep only likely Scottish university domains
+                    if '.ac.uk' not in website:
+                        continue
+                    key = (name, website)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    universities.append({
+                        'name': name,
+                        'website': website
+                    })
+                current = current.find_next_sibling()
         
         print(f"Scraped {len(universities)} universities from Scotland")
         
@@ -46,7 +69,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
 
 if __name__ == "__main__":
     # Test scraper
-    test_url = "https://example.com/scotland"
+    test_url = "https://www.gov.scot/policies/universities/"
     results = scrape_universities(test_url)
     for uni in results:
         print(f"- {uni['name']}: {uni['website']}")

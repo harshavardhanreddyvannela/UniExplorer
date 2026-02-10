@@ -27,13 +27,28 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # TODO: Customize HTML parsing logic for Wales's specific website structure
-        # Example:
-        # uni_elements = soup.find_all('div', class_='university-item')
-        # for elem in uni_elements:
-        #     name = elem.find('h2').text.strip()
-        #     website = elem.find('a', class_='uni-link')['href']
-        #     universities.append({'name': name, 'website': website})
+        content = soup.find('div', class_='gem-c-govspeak')
+        if not content:
+            content = soup.find('div', class_='govuk-govspeak')
+        if not content:
+            content = soup
+        
+        seen = set()
+        for link in content.find_all('a', href=True):
+            name = link.get_text(strip=True)
+            website = link.get('href', '').strip()
+            if not name or not website.startswith('http'):
+                continue
+            if 'gov.uk' in website:
+                continue
+            key = (name, website)
+            if key in seen:
+                continue
+            seen.add(key)
+            universities.append({
+                'name': name,
+                'website': website
+            })
         
         print(f"Scraped {len(universities)} universities from Wales")
         
@@ -46,7 +61,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
 
 if __name__ == "__main__":
     # Test scraper
-    test_url = "https://example.com/wales"
+    test_url = "https://www.gov.uk/check-university-award-degree/recognised-bodies-wales"
     results = scrape_universities(test_url)
     for uni in results:
         print(f"- {uni['name']}: {uni['website']}")

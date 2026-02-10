@@ -27,15 +27,39 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # TODO: Customize HTML parsing logic for Ireland's specific website structure
-        # Example:
-        # uni_elements = soup.find_all('div', class_='university-item')
-        # for elem in uni_elements:
-        #     name = elem.find('h2').text.strip()
-        #     website = elem.find('a', class_='uni-link')['href']
-        #     universities.append({'name': name, 'website': website})
+        # Find the headings for universities and institutes of technology
+        headings_to_collect = {
+            'Publicly-funded universities',
+            'Institutes of technology',
+            'Other institutions that receive public funding'
+        }
+        seen = set()
         
-        print(f"Scraped {len(universities)} universities from Ireland")
+        for heading in soup.find_all(['h2', 'h3']):
+            heading_text = heading.get_text(strip=True)
+            if heading_text not in headings_to_collect:
+                continue
+            
+            for sibling in heading.find_next_siblings():
+                if sibling.name in ['h2', 'h3']:
+                    break
+                
+                for ul in sibling.find_all('ul'):
+                    for li in ul.find_all('li'):
+                        link = li.find('a', href=True)
+                        if link:
+                            name = link.get_text(strip=True)
+                            website = link['href']
+                            
+                            if name and website and website.startswith('http'):
+                                key = (name, website)
+                                if key in seen:
+                                    continue
+                                seen.add(key)
+                                universities.append({
+                                    'name': name,
+                                    'website': website
+                                })
         
     except requests.exceptions.RequestException as e:
         print(f"Error scraping Ireland: {str(e)}")
@@ -46,7 +70,9 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
 
 if __name__ == "__main__":
     # Test scraper
-    test_url = "https://example.com/ireland"
+    test_url = "https://www.gov.ie/en/department-of-further-and-higher-education-research-innovation-and-science/publications/list-of-publicly-funded-higher-education-institutions-universities-and-colleges/"
     results = scrape_universities(test_url)
+    
+    print(f"Found {len(results)} universities:")
     for uni in results:
-        print(f"- {uni['name']}: {uni['website']}")
+        print(f"  - {uni['name']}: {uni['website']}")

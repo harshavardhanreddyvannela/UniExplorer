@@ -27,13 +27,35 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # TODO: Customize HTML parsing logic for Northern Ireland's specific website structure
-        # Example:
-        # uni_elements = soup.find_all('div', class_='university-item')
-        # for elem in uni_elements:
-        #     name = elem.find('h2').text.strip()
-        #     website = elem.find('a', class_='uni-link')['href']
-        #     universities.append({'name': name, 'website': website})
+        # Find the paragraph that introduces the recognised bodies list
+        target_phrase = "Current Northern Ireland recognised bodies are:"
+        intro_paragraph = None
+        for p in soup.find_all('p'):
+            if target_phrase in p.get_text(strip=True):
+                intro_paragraph = p
+                break
+        
+        if intro_paragraph:
+            # The list of recognised bodies follows this paragraph
+            ul = intro_paragraph.find_next_sibling('ul')
+            if ul:
+                seen = set()
+                for li in ul.find_all('li'):
+                    link = li.find('a', href=True)
+                    if not link:
+                        continue
+                    name = link.get_text(strip=True)
+                    website = link.get('href', '').strip()
+                    if not name or not website.startswith('http'):
+                        continue
+                    key = (name, website)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    universities.append({
+                        'name': name,
+                        'website': website
+                    })
         
         print(f"Scraped {len(universities)} universities from Northern Ireland")
         
@@ -46,7 +68,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
 
 if __name__ == "__main__":
     # Test scraper
-    test_url = "https://example.com/northern-ireland"
+    test_url = "https://www.economy-ni.gov.uk/articles/higher-education-policy"
     results = scrape_universities(test_url)
     for uni in results:
         print(f"- {uni['name']}: {uni['website']}")
