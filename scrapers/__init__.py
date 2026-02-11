@@ -11,6 +11,7 @@ from .ireland import scrape_universities as scrape_ireland
 from .canada import scrape_universities as scrape_canada
 from .australia import scrape_universities as scrape_australia
 from .new_zealand import scrape_universities as scrape_new_zealand
+from .greece import scrape_universities as scrape_greece
 
 __all__ = [
     'scrape_scotland',
@@ -21,4 +22,5 @@ __all__ = [
     'scrape_canada',
     'scrape_australia',
     'scrape_new_zealand',
+    'scrape_greece',
 ]
