@@ -23,6 +23,35 @@ from scrapers.denmark import scrape_universities as scrape_denmark
 from scrapers.norway import scrape_universities as scrape_norway
 from scrapers.sweden import scrape_universities as scrape_sweden
 from scrapers.finland import scrape_universities as scrape_finland
+from scrapers.japan import scrape_universities as scrape_japan
+from scrapers.singapore import scrape_universities as scrape_singapore
+from scrapers.south_korea import scrape_universities as scrape_south_korea
+from scrapers.taiwan import scrape_universities as scrape_taiwan
+from scrapers.brunei import scrape_universities as scrape_brunei
+from scrapers.estonia import scrape_universities as scrape_estonia
+from scrapers.latvia import scrape_universities as scrape_latvia
+from scrapers.lithuania import scrape_universities as scrape_lithuania
+from scrapers.usa import scrape_universities as scrape_usa
+from scrapers.poland import scrape_universities as scrape_poland
+from scrapers.czechia import scrape_universities as scrape_czechia
+from scrapers.slovakia import scrape_universities as scrape_slovakia
+from scrapers.hungary import scrape_universities as scrape_hungary
+from scrapers.slovenia import scrape_universities as scrape_slovenia
+from scrapers.croatia import scrape_universities as scrape_croatia
+from scrapers.spain import scrape_universities as scrape_spain
+from scrapers.portugal import scrape_universities as scrape_portugal
+from scrapers.italy import scrape_universities as scrape_italy
+from scrapers.france import scrape_universities as scrape_france
+from scrapers.germany import scrape_universities as scrape_germany
+from scrapers.switzerland import scrape_universities as scrape_switzerland
+from scrapers.austria import scrape_universities as scrape_austria
+from scrapers.malta import scrape_universities as scrape_malta
+from scrapers.belgium import scrape_universities as scrape_belgium
+from scrapers.netherlands import scrape_universities as scrape_netherlands
+from scrapers.monaco import scrape_universities as scrape_monaco
+from scrapers.andorra import scrape_universities as scrape_andorra
+from scrapers.liechtenstein import scrape_universities as scrape_liechtenstein
+from scrapers.luxembourg import scrape_universities as scrape_luxembourg
 
 # Mapping of country names to scraper functions
 SCRAPERS = {
@@ -40,6 +69,35 @@ SCRAPERS = {
     'Norway': scrape_norway,
     'Sweden': scrape_sweden,
     'Finland': scrape_finland,
+    'Japan': scrape_japan,
+    'Singapore': scrape_singapore,
+    'South Korea': scrape_south_korea,
+    'Taiwan': scrape_taiwan,
+    'Brunei': scrape_brunei,
+    'Estonia': scrape_estonia,
+    'Latvia': scrape_latvia,
+    'Lithuania': scrape_lithuania,
+    'USA': scrape_usa,
+    'Poland': scrape_poland,
+    'Czechia': scrape_czechia,
+    'Slovakia': scrape_slovakia,
+    'Hungary': scrape_hungary,
+    'Slovenia': scrape_slovenia,
+    'Croatia': scrape_croatia,
+    'Spain': scrape_spain,
+    'Portugal': scrape_portugal,
+    'Italy': scrape_italy,
+    'France': scrape_france,
+    'Germany': scrape_germany,
+    'Switzerland': scrape_switzerland,
+    'Austria': scrape_austria,
+    'Malta': scrape_malta,
+    'Belgium': scrape_belgium,
+    'Netherlands': scrape_netherlands,
+    'Monaco': scrape_monaco,
+    'Andorra': scrape_andorra,
+    'Liechtenstein': scrape_liechtenstein,
+    'Luxembourg': scrape_luxembourg,
 }
 
 def read_config(config_file: str = 'config.csv') -> Dict[str, str]:
