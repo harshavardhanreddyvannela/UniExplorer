@@ -18,6 +18,11 @@ from scrapers.canada import scrape_universities as scrape_canada
 from scrapers.australia import scrape_universities as scrape_australia
 from scrapers.new_zealand import scrape_universities as scrape_new_zealand
 from scrapers.greece import scrape_universities as scrape_greece
+from scrapers.iceland import scrape_universities as scrape_iceland
+from scrapers.denmark import scrape_universities as scrape_denmark
+from scrapers.norway import scrape_universities as scrape_norway
+from scrapers.sweden import scrape_universities as scrape_sweden
+from scrapers.finland import scrape_universities as scrape_finland
 
 # Mapping of country names to scraper functions
 SCRAPERS = {
@@ -30,6 +35,11 @@ SCRAPERS = {
     'Australia': scrape_australia,
     'New Zealand': scrape_new_zealand,
     'Greece': scrape_greece,
+    'Iceland': scrape_iceland,
+    'Denmark': scrape_denmark,
+    'Norway': scrape_norway,
+    'Sweden': scrape_sweden,
+    'Finland': scrape_finland,
 }
 
 def read_config(config_file: str = 'config.csv') -> Dict[str, str]:

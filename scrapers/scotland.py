@@ -20,9 +20,9 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
     
     try:
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
         }
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
         
         soup = BeautifulSoup(response.content, 'html.parser')
@@ -67,12 +67,3 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         print(f"Unexpected error scraping Scotland: {str(e)}")
     
     return universities
-
-if __name__ == "__main__":
-    # Test scraper
-    test_url = "https://www.gov.scot/policies/universities/"
-    results = scrape_universities(test_url)
-    
-    print(f"Found {len(results)} universities:")
-    for uni in results:
-        print(f"  - {uni['name']}: {uni['website']}")

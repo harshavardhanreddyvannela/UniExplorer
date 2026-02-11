@@ -25,14 +25,11 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         
         # Set up browser headers
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
             'Accept': '*/*',
             'Accept-Language': 'en-US,en;q=0.9',
-            'Accept-Encoding': 'gzip, deflate, br',
             'Connection': 'keep-alive',
-            'Upgrade-Insecure-Requests': '1',
-            'Referer': 'https://www.educationcounts.govt.nz/',
-            'DNT': '1'
+            'Referer': 'https://www.educationcounts.govt.nz/'
         }
         session.headers.update(headers)
         
@@ -104,12 +101,3 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         print(f"Error scraping New Zealand: {str(e)}")
     
     return universities
-
-if __name__ == "__main__":
-    # Test scraper
-    test_url = "https://www.educationcounts.govt.nz/__data/assets/file/0006/62574/tertiary-providers-directory-02022026.xlsx"
-    results = scrape_universities(test_url)
-    
-    print(f"Found {len(results)} universities:")
-    for uni in results:
-        print(f"  - {uni['name']}: {uni['website']}")

@@ -174,13 +174,3 @@ def _extract_links_from_page(soup: BeautifulSoup) -> List[tuple]:
                 links.append((name, detail_url))
     
     return links
-
-
-if __name__ == "__main__":
-    # Test scraper
-    test_url = "https://www.cicic.ca/869/results.canada?search=&s=2&t=1&sect=2,3&th=0&dist=0"
-    results = scrape_universities(test_url)
-    
-    print(f"Found {len(results)} universities:")
-    for uni in results:
-        print(f"  - {uni['name']}: {uni['website']}")
