@@ -27,7 +27,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find the paragraph that introduces the recognised bodies list
+        # Find the recognised bodies paragraph
         target_phrase = "Current Northern Ireland recognised bodies are:"
         intro_paragraph = None
         for p in soup.find_all('p'):
@@ -36,7 +36,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                 break
         
         if intro_paragraph:
-            # The list of recognised bodies follows this paragraph
+            # Get the list following the paragraph
             ul = intro_paragraph.find_next_sibling('ul')
             if ul:
                 seen = set()

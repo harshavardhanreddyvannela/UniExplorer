@@ -20,10 +20,10 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
     universities = []
     
     try:
-        # Create a session to maintain cookies
+        # Create session with cookies
         session = requests.Session()
         
-        # Set up realistic browser headers
+        # Set up browser headers
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Accept': '*/*',
@@ -39,7 +39,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         # Visit the main page first to get cookies
         session.get('https://www.educationcounts.govt.nz/directories/list-of-tertiary-providers', timeout=30)
         
-        # Now download the file
+        # Download the file
         response = session.get(url, timeout=30)
         response.raise_for_status()
         
@@ -56,7 +56,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
             print("No header row found")
             return universities
         
-        # Find column indices - be more specific for "Type" column
+        # Find column indices
         headers_lower = [str(h).lower() if h else "" for h in headers_row]
         
         name_idx = None

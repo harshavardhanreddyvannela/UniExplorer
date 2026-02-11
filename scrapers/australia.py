@@ -31,7 +31,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         for h2 in soup.find_all('h2'):
             link = h2.find('a', href=True)
             if link:
-                # Get name from full h2 text (not just link text)
+                # Get full h2 text for name
                 name = h2.get_text(strip=True)
                 website = link['href']
                 

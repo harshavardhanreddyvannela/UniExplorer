@@ -34,7 +34,6 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         # Delete the first two rows
         sheet.delete_rows(1, 2)
         
-        # Now Row 1 contains the headers, Row 2+ contains the data
         rows = list(sheet.iter_rows(min_row=2, values_only=True))
         
         legal_name_idx = 0       # Column 1: Provider's legal name

@@ -27,7 +27,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find the heading "Recognised bodies" (some pages include extra whitespace)
+        # Find the "Recognised bodies" heading
         recognised_heading = None
         for heading in soup.find_all(['h2', 'h3']):
             if heading.get_text(strip=True) == 'Recognised bodies':
@@ -35,7 +35,7 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                 break
         
         if recognised_heading:
-            # Walk siblings until the next heading and collect links in lists
+            # Collect links until next heading
             current = recognised_heading.find_next_sibling()
             seen = set()
             
