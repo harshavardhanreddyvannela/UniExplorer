@@ -98,8 +98,6 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                     'website': website
                 })
         
-        print(f"Scraped {len(universities)} universities from New Zealand")
-        
     except requests.exceptions.RequestException as e:
         print(f"Error downloading New Zealand file: {str(e)}")
     except Exception as e:
@@ -111,5 +109,7 @@ if __name__ == "__main__":
     # Test scraper
     test_url = "https://www.educationcounts.govt.nz/__data/assets/file/0006/62574/tertiary-providers-directory-02022026.xlsx"
     results = scrape_universities(test_url)
+    
+    print(f"Found {len(results)} universities:")
     for uni in results:
-        print(f"- {uni['name']}: {uni['website']}")
+        print(f"  - {uni['name']}: {uni['website']}")

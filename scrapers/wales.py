@@ -50,8 +50,6 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                 'website': website
             })
         
-        print(f"Scraped {len(universities)} universities from Wales")
-        
     except requests.exceptions.RequestException as e:
         print(f"Error scraping Wales: {str(e)}")
     except Exception as e:
@@ -63,5 +61,7 @@ if __name__ == "__main__":
     # Test scraper
     test_url = "https://www.gov.uk/check-university-award-degree/recognised-bodies-wales"
     results = scrape_universities(test_url)
+    
+    print(f"Found {len(results)} universities:")
     for uni in results:
-        print(f"- {uni['name']}: {uni['website']}")
+        print(f"  - {uni['name']}: {uni['website']}")

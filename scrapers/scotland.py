@@ -58,8 +58,6 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                     })
                 current = current.find_next_sibling()
         
-        print(f"Scraped {len(universities)} universities from Scotland")
-        
     except requests.exceptions.RequestException as e:
         print(f"Error scraping Scotland: {str(e)}")
     except Exception as e:
@@ -71,5 +69,7 @@ if __name__ == "__main__":
     # Test scraper
     test_url = "https://www.gov.scot/policies/universities/"
     results = scrape_universities(test_url)
+    
+    print(f"Found {len(results)} universities:")
     for uni in results:
-        print(f"- {uni['name']}: {uni['website']}")
+        print(f"  - {uni['name']}: {uni['website']}")

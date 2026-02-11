@@ -68,12 +68,10 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
             else:
                 trading_name = ""
             
-            # If trading name has multiple lines with institution names, use legal name
-            if trading_name_full and '\n' in trading_name_full:
-                lines = trading_name_full.split('\n')
-                if len(lines) > 1 and any('University' in line or 'School' in line or 'College' in line for line in lines[1:]):
-                    legal_name = row[legal_name_idx]
-                    trading_name = str(legal_name).strip() if legal_name else ""
+            # If trading name contains "Hospital", use legal name instead
+            if trading_name_full and 'Hospital' in trading_name_full:
+                legal_name = row[legal_name_idx]
+                trading_name = str(legal_name).strip() if legal_name else ""
             
             # If no trading name, trading name is "Not applicable", or trading name is all caps (abbreviation), use legal name
             if not trading_name or trading_name.lower() == "not applicable":
@@ -111,5 +109,7 @@ if __name__ == "__main__":
     # Test scraper
     test_url = "https://register-api.officeforstudents.org.uk/api/Download/"
     results = scrape_universities(test_url)
+    
+    print(f"Found {len(results)} universities:")
     for uni in results:
-        print(f"- {uni['name']}: {uni['website']}")
+        print(f"  - {uni['name']}: {uni['website']}")

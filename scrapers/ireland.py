@@ -22,17 +22,13 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         }
-        response = requests.get(url, headers=headers, timeout=10)
+        response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
         
         soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Find the headings for universities and institutes of technology
-        headings_to_collect = {
-            'Publicly-funded universities',
-            'Institutes of technology',
-            'Other institutions that receive public funding'
-        }
+        # Find the "Publicly-funded universities" section
+        headings_to_collect = {'Publicly-funded universities'}
         seen = set()
         
         for heading in soup.find_all(['h2', 'h3']):
