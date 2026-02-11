@@ -42,6 +42,9 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                         'website': website
                     })
         
+        # Remove specific institutions after collecting all
+        universities = [u for u in universities if u['name'] not in ['Australian University of Theology', 'Torrens University Australia', 'University of Divinity']]
+        
     except requests.exceptions.RequestException as e:
         print(f"Error scraping Australia: {str(e)}")
     except Exception as e:

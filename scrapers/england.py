@@ -96,7 +96,8 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                 'website': website
             })
         
-        print(f"Scraped {len(universities)} universities from England")
+        # Remove "The Open University" after collecting all
+        universities = [u for u in universities if u['name'] != 'The Open University']
         
     except requests.exceptions.RequestException as e:
         print(f"Error downloading England spreadsheet: {str(e)}")

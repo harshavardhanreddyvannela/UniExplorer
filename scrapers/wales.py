@@ -50,6 +50,9 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                 'website': website
             })
         
+        # Remove specific institutions after collecting all
+        universities = [u for u in universities if u['name'] not in ['Open University, The', 'Royal College of Nursing']]
+        
     except requests.exceptions.RequestException as e:
         print(f"Error scraping Wales: {str(e)}")
     except Exception as e:

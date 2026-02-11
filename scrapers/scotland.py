@@ -58,6 +58,9 @@ def scrape_universities(url: str) -> List[Dict[str, str]]:
                     })
                 current = current.find_next_sibling()
         
+        # Remove "The Open University in Scotland" after collecting all
+        universities = [u for u in universities if u['name'] != 'The Open University in Scotland']
+        
     except requests.exceptions.RequestException as e:
         print(f"Error scraping Scotland: {str(e)}")
     except Exception as e:
