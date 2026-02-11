@@ -17,7 +17,6 @@ from scrapers.ireland import scrape_universities as scrape_ireland
 from scrapers.canada import scrape_universities as scrape_canada
 from scrapers.australia import scrape_universities as scrape_australia
 from scrapers.new_zealand import scrape_universities as scrape_new_zealand
-from scrapers.united_states import scrape_universities as scrape_united_states
 
 # Mapping of country names to scraper functions
 SCRAPERS = {
@@ -29,7 +28,6 @@ SCRAPERS = {
     'Canada': scrape_canada,
     'Australia': scrape_australia,
     'New Zealand': scrape_new_zealand,
-    'United States': scrape_united_states,
 }
 
 def read_config(config_file: str = 'config.csv') -> Dict[str, str]:
