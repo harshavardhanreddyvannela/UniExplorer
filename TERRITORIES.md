@@ -6,8 +6,8 @@ This document tracks the status of implementing university scrapers for territor
 
 ## 🇺🇸 United States Territories
 
-- [x] 🇵🇷 **Puerto Rico**
-- [x] 🇬🇺 **Guam**
+- [ ] 🇵🇷 **Puerto Rico**
+- [ ] 🇬🇺 **Guam**
 - [ ] 🇻🇮 **U.S. Virgin Islands**
 - [ ] 🇲🇵 **Northern Mariana Islands**
 
@@ -17,15 +17,15 @@ This document tracks the status of implementing university scrapers for territor
 
 ### Overseas Departments & Regions
 
-- [x] 🇷🇪 **Réunion**
-- [x] 🇬🇵 **Guadeloupe**
+- [ ] 🇷🇪 **Réunion**
+- [ ] 🇬🇵 **Guadeloupe**
 - [ ] 🇲🇶 **Martinique**
 - [ ] 🇾🇹 **Mayotte**
 - [ ] 🇬🇫 **French Guiana**
 
 ### Overseas Collectivities
 
-- [x] 🇵🇫 **French Polynesia**
+- [ ] 🇵🇫 **French Polynesia**
 - [ ] 🇳🇨 **New Caledonia**
 - [ ] 🇲🇫 **Saint Martin**
 - [ ] 🇼🇫 **Wallis and Futuna**
@@ -36,7 +36,7 @@ This document tracks the status of implementing university scrapers for territor
 
 ## 🇩🇰 Danish Autonomous Territories
 
-- [x] 🇬🇱 **Greenland**
+- [ ] 🇬🇱 **Greenland**
 - [ ] 🇫🇴 **Faroe Islands**
 
 ---
@@ -45,13 +45,13 @@ This document tracks the status of implementing university scrapers for territor
 
 ### Constituent Countries
 
-- [x] 🇦🇼 **Aruba**
-- [x] 🇨🇼 **Curaçao**
+- [ ] 🇦🇼 **Aruba**
+- [ ] 🇨🇼 **Curaçao**
 - [ ] 🇸🇽 **Sint Maarten**
 
 ### Caribbean Netherlands (Special Municipalities)
 
-- [x] **Bonaire**
+- [ ] **Bonaire**
 - [ ] **Sint Eustatius**
 - [ ] **Saba**
 
@@ -60,9 +60,9 @@ This document tracks the status of implementing university scrapers for territor
 ## 🇬🇧 British Overseas Territories
 
 - [ ] 🇰🇾 **Cayman Islands**
-- [x] 🇧🇲 **Bermuda**
+- [ ] 🇧🇲 **Bermuda**
 - [ ] 🇹🇨 **Turks and Caicos Islands**
-- [x] 🇬🇮 **Gibraltar**
+- [ ] 🇬🇮 **Gibraltar**
 - [ ] 🇻🇬 **British Virgin Islands**
 - [ ] 🇦🇮 **Anguilla**
 - [ ] 🇸🇭 **Saint Helena, Ascension and Tristan da Cunha**
@@ -73,7 +73,7 @@ This document tracks the status of implementing university scrapers for territor
 
 ## 🇦🇺 Australian External Territories
 
-- [x] 🇨🇽 **Christmas Island**
+- [ ] 🇨🇽 **Christmas Island**
 - [ ] 🇨🇨 **Cocos (Keeling) Islands**
 
 ---
@@ -82,8 +82,8 @@ This document tracks the status of implementing university scrapers for territor
 
 ### Associated States (Self-Governing)
 
-- [x] 🇨🇰 **Cook Islands**
-- [x] 🇳🇺 **Niue**
+- [ ] 🇨🇰 **Cook Islands**
+- [ ] 🇳🇺 **Niue**
 
 ### Dependent Territory
 
@@ -93,16 +93,16 @@ This document tracks the status of implementing university scrapers for territor
 
 ## 📊 Summary
 
-| Country           | Territories | Completed | Progress                         |
-| ----------------- | ----------- | --------- | -------------------------------- |
-| 🇺🇸 United States  | 4           | 2         | ![](https://progress-bar.dev/50) |
-| 🇫🇷 France         | 11          | 3         | ![](https://progress-bar.dev/27) |
-| 🇩🇰 Denmark        | 2           | 1         | ![](https://progress-bar.dev/50) |
-| 🇳🇱 Netherlands    | 6           | 3         | ![](https://progress-bar.dev/50) |
-| 🇬🇧 United Kingdom | 9           | 2         | ![](https://progress-bar.dev/22) |
-| 🇦🇺 Australia      | 2           | 1         | ![](https://progress-bar.dev/50) |
-| 🇳🇿 New Zealand    | 3           | 2         | ![](https://progress-bar.dev/67) |
-| **TOTAL**         | **37**      | **14**    | ![](https://progress-bar.dev/38) |
+| Country           | Territories | Completed | Progress |
+| ----------------- | ----------- | --------- | -------- |
+| 🇺🇸 United States  | 4           | 0         | 0%       |
+| 🇫🇷 France         | 11          | 0         | 0%       |
+| 🇩🇰 Denmark        | 2           | 0         | 0%       |
+| 🇳🇱 Netherlands    | 6           | 0         | 0%       |
+| 🇬🇧 United Kingdom | 9           | 0         | 0%       |
+| 🇦🇺 Australia      | 2           | 0         | 0%       |
+| 🇳🇿 New Zealand    | 3           | 0         | 0%       |
+| **TOTAL**         | **37**      | **0**     | 0%       |
 
 ---
 
