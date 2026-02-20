@@ -1,69 +1,9 @@
 """
-Web scraper for Scottish universities.
+Web scraper for Scotland universities.
 """
 
-import requests
-from bs4 import BeautifulSoup
-from typing import List, Dict
+from typing import Dict, List
+
 
 def scrape_universities(url: str) -> List[Dict[str, str]]:
-    """
-    Scrape universities from the provided URL for Scotland.
-    
-    Args:
-        url: The website URL to scrape
-        
-    Returns:
-        List of dictionaries with 'name' and 'website' keys
-    """
-    universities = []
-    
-    try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-        }
-        response = requests.get(url, headers=headers, timeout=30)
-        response.raise_for_status()
-        
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        # Find the "Recognised bodies" heading
-        recognised_heading = None
-        for heading in soup.find_all(['h2', 'h3']):
-            if heading.get_text(strip=True) == 'Recognised bodies':
-                recognised_heading = heading
-                break
-        
-        if recognised_heading:
-            # Collect links until next heading
-            current = recognised_heading.find_next_sibling()
-            seen = set()
-            
-            while current and current.name not in ['h2', 'h3']:
-                for link in current.find_all('a', href=True):
-                    name = link.get_text(strip=True)
-                    website = link.get('href', '').strip()
-                    if not name or not website.startswith('http'):
-                        continue
-                    # Keep only likely Scottish university domains
-                    if '.ac.uk' not in website:
-                        continue
-                    key = (name, website)
-                    if key in seen:
-                        continue
-                    seen.add(key)
-                    universities.append({
-                        'name': name,
-                        'website': website
-                    })
-                current = current.find_next_sibling()
-        
-        # Remove "The Open University in Scotland" after collecting all
-        universities = [u for u in universities if u['name'] != 'The Open University in Scotland']
-        
-    except requests.exceptions.RequestException as e:
-        print(f"Error scraping Scotland: {str(e)}")
-    except Exception as e:
-        print(f"Unexpected error scraping Scotland: {str(e)}")
-    
-    return universities
+    return []

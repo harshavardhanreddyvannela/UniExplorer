@@ -1,28 +1,29 @@
 country,url
-Australia,https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities
-Austria,https://www.bmbwf.gv.at/
-Belgium,https://www.enseignement.be/
-Canada,https://www.cicic.ca/869/results.canada?search=&s=2&t=1&sect=2,3&th=0&dist=0
-Czechia,https://www.msmt.cz/
-Denmark,https://ufsn.dk/uddannelse/de-videregaaende-uddannelsesinstitutioner/
-England,https://register-api.officeforstudents.org.uk/api/Download/
-France,https://www.enseignementsup-recherche.gouv.fr/
-Germany,https://www.hochschulkompass.de/
-Ireland,https://www.gov.ie/en/department-of-further-and-higher-education-research-innovation-and-science/publications/list-of-publicly-funded-higher-education-institutions-universities-and-colleges/
-Italy,https://www.mur.gov.it/
-Japan,https://www.mext.go.jp/en/
-Netherlands,https://www.studyinholland.nl/
-New Zealand,https://www.educationcounts.govt.nz/__data/assets/file/0006/62574/tertiary-providers-directory-02022026.xlsx
-Northern Ireland,https://www.economy-ni.gov.uk/articles/higher-education-policy
-Norway,https://www.nokut.no/hogare-utdanning/akkrediterte-institusjonar/
-Poland,https://www.gov.pl/web/edukacja-i-nauka
-Portugal,https://www.dges.gov.pt/
-Scotland,https://www.gov.scot/policies/universities/
-Singapore,https://www.moe.gov.sg/
-South Korea,https://www.moe.go.kr/
-Spain,https://www.universidades.gob.es/
-Sweden,https://www.uka.se/sa-fungerar-hogskolan/universitet-och-hogskolor/lista-over-universitet-hogskolor-och-enskilda-utbildningsanordnare
-Switzerland,https://www.swissuniversities.ch/
-Taiwan,https://www.edu.tw/
-USA,https://www.ed.gov/
-Wales,https://www.gov.uk/check-university-award-degree/recognised-bodies-wales
+Australia,https://example.com/australia
+Austria,https://example.com/austria
+Canada,https://example.com/canada
+Czechia,https://example.com/czechia
+Denmark,https://example.com/denmark
+England,https://example.com/england
+Flanders,https://example.com/flanders
+France,https://example.com/france
+Germany,https://example.com/germany
+Ireland,https://example.com/ireland
+Italy,https://example.com/italy
+Japan,https://example.com/japan
+Netherlands,https://example.com/netherlands
+New Zealand,https://example.com/new-zealand
+Northern Ireland,https://example.com/northern-ireland
+Norway,https://example.com/norway
+Poland,https://example.com/poland
+Portugal,https://example.com/portugal
+Scotland,https://example.com/scotland
+Singapore,https://example.com/singapore
+South Korea,https://example.com/south-korea
+Spain,https://example.com/spain
+Sweden,https://example.com/sweden
+Switzerland,https://example.com/switzerland
+Taiwan,https://example.com/taiwan
+USA,https://example.com/usa
+Wales,https://example.com/wales
+Wallonia,https://example.com/wallonia

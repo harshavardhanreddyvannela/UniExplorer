@@ -1,5 +1,5 @@
 """
-Web scraper for Australia universities.
+Web scraper for Wallonia universities.
 """
 
 from typing import Dict, List

@@ -8,8 +8,8 @@
 | North America    | 1         | 2      | ⏳      |
 | Nordic Countries | 3         | 3      | ✅      |
 | Southern Europe  | 0         | 3      | ⏳      |
-| Western Europe   | 0         | 6      | ⏳      |
-| **TOTAL**        | **11**    | **27** | **41%** |
+| Western Europe   | 0         | 7      | ⏳      |
+| **TOTAL**        | **11**    | **28** | **39%** |
 
 ---
 
@@ -52,11 +52,12 @@
 - [ ] 🇵🇹 Portugal
 - [ ] 🇪🇸 Spain
 
-## Western Europe (0/6)
+## Western Europe (0/7)
 
 - [ ] 🇦🇹 Austria
-- [ ] 🇧🇪 Belgium
+- [ ] 🇧🇪 Flanders
 - [ ] 🇫🇷 France
 - [ ] 🇩🇪 Germany
 - [ ] 🇳🇱 Netherlands
 - [ ] 🇨🇭 Switzerland
+- [ ] 🇧🇪 Wallonia
