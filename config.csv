@@ -1,44 +1,28 @@
 country,url
-Scotland,https://www.gov.scot/policies/universities/
-Wales,https://www.gov.uk/check-university-award-degree/recognised-bodies-wales
-Northern Ireland,https://www.economy-ni.gov.uk/articles/higher-education-policy
-England,https://register-api.officeforstudents.org.uk/api/Download/
-Ireland,https://www.gov.ie/en/department-of-further-and-higher-education-research-innovation-and-science/publications/list-of-publicly-funded-higher-education-institutions-universities-and-colleges/
-Canada,https://www.cicic.ca/869/results.canada?search=&s=2&t=1&sect=2,3&th=0&dist=0
 Australia,https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities
-New Zealand,https://www.educationcounts.govt.nz/__data/assets/file/0006/62574/tertiary-providers-directory-02022026.xlsx
-Greece,https://www.doatap.gr/enhmerosh/idrumata-ellados
-Iceland,https://english.enicnaric.is/universities.html
-Denmark,https://ufsn.dk/uddannelse/de-videregaaende-uddannelsesinstitutioner/
-Norway,https://www.nokut.no/hogare-utdanning/akkrediterte-institusjonar/
-Sweden,https://www.uka.se/sa-fungerar-hogskolan/universitet-och-hogskolor/lista-over-universitet-hogskolor-och-enskilda-utbildningsanordnare
-Finland,https://opintopolku.fi/konfo-backend/search/oppilaitokset
-Japan,https://www.mext.go.jp/en/
-Singapore,https://www.moe.gov.sg/
-South Korea,https://www.moe.go.kr/
-Taiwan,https://www.edu.tw/
-Brunei,https://www.moe.gov.bn/
-Estonia,https://www.haridussilm.ee/
-Latvia,https://www.izm.gov.lv/
-Lithuania,https://www.smm.lt/
-USA,https://www.ed.gov/
-Poland,https://www.gov.pl/web/edukacja-i-nauka
+Austria,https://www.bmbwf.gv.at/
+Belgium,https://www.enseignement.be/
+Canada,https://www.cicic.ca/869/results.canada?search=&s=2&t=1&sect=2,3&th=0&dist=0
 Czechia,https://www.msmt.cz/
-Slovakia,https://www.minedu.sk/
-Hungary,https://www.oktatas.hu/
-Slovenia,https://www.gov.si/en/state-authorities/ministries/ministry-of-education-science-and-sport/
-Croatia,https://mzo.gov.hr/
-Spain,https://www.universidades.gob.es/
-Portugal,https://www.dges.gov.pt/
-Italy,https://www.mur.gov.it/
+Denmark,https://ufsn.dk/uddannelse/de-videregaaende-uddannelsesinstitutioner/
+England,https://register-api.officeforstudents.org.uk/api/Download/
 France,https://www.enseignementsup-recherche.gouv.fr/
 Germany,https://www.hochschulkompass.de/
-Switzerland,https://www.swissuniversities.ch/
-Austria,https://www.bmbwf.gv.at/
-Malta,https://www.um.edu.mt/
-Belgium,https://www.enseignement.be/
+Ireland,https://www.gov.ie/en/department-of-further-and-higher-education-research-innovation-and-science/publications/list-of-publicly-funded-higher-education-institutions-universities-and-colleges/
+Italy,https://www.mur.gov.it/
+Japan,https://www.mext.go.jp/en/
 Netherlands,https://www.studyinholland.nl/
-Monaco,https://www.gouv.mc/
-Andorra,https://www.govern.ad/
-Liechtenstein,https://www.llv.li/
-Luxembourg,https://mesr.gouvernement.lu/
+New Zealand,https://www.educationcounts.govt.nz/__data/assets/file/0006/62574/tertiary-providers-directory-02022026.xlsx
+Northern Ireland,https://www.economy-ni.gov.uk/articles/higher-education-policy
+Norway,https://www.nokut.no/hogare-utdanning/akkrediterte-institusjonar/
+Poland,https://www.gov.pl/web/edukacja-i-nauka
+Portugal,https://www.dges.gov.pt/
+Scotland,https://www.gov.scot/policies/universities/
+Singapore,https://www.moe.gov.sg/
+South Korea,https://www.moe.go.kr/
+Spain,https://www.universidades.gob.es/
+Sweden,https://www.uka.se/sa-fungerar-hogskolan/universitet-och-hogskolor/lista-over-universitet-hogskolor-och-enskilda-utbildningsanordnare
+Switzerland,https://www.swissuniversities.ch/
+Taiwan,https://www.edu.tw/
+USA,https://www.ed.gov/
+Wales,https://www.gov.uk/check-university-award-degree/recognised-bodies-wales
