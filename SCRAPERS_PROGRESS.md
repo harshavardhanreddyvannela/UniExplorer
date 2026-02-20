@@ -2,62 +2,62 @@
 
 | Region           | Completed | Total  | Status  |
 | ---------------- | --------- | ------ | ------- |
-| Asia-Pacific     | 2         | 6      | ⏳      |
-| British Isles    | 5         | 5      | ✅      |
+| Asia-Pacific     | 0         | 6      | ⏳      |
+| British Isles    | 0         | 5      | ⏳      |
 | Eastern Europe   | 0         | 2      | ⏳      |
-| North America    | 1         | 2      | ⏳      |
-| Nordic Countries | 3         | 3      | ✅      |
+| North America    | 0         | 2      | ⏳      |
+| Nordic Countries | 0         | 3      | ⏳      |
 | Southern Europe  | 0         | 3      | ⏳      |
 | Western Europe   | 0         | 7      | ⏳      |
-| **TOTAL**        | **11**    | **28** | **39%** |
+| **TOTAL**        | **0**     | **28** | **0%**  |
 
 ---
 
-## Asia-Pacific (2/6)
+## Asia-Pacific (0/6)
 
-- [x] 🇦🇺 Australia
-- [ ] 🇯🇵 Japan
-- [x] 🇳🇿 New Zealand
-- [ ] 🇸🇬 Singapore
-- [ ] 🇰🇷 South Korea
-- [ ] 🇹🇼 Taiwan
+- [ ] Australia
+- [ ] Japan
+- [ ] New Zealand
+- [ ] Singapore
+- [ ] South Korea
+- [ ] Taiwan
 
-## British Isles (5/5 Complete)
+## British Isles (0/5)
 
-- [x] 🏴󠁧󠁢󠁥󠁮󠁧󠁿 England
-- [x] 🇮🇪 Ireland
-- [x] 🇬🇧 Northern Ireland
-- [x] 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland
-- [x] 🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wales
+- [ ] England
+- [ ] Ireland
+- [ ] Northern Ireland
+- [ ] Scotland
+- [ ] Wales
 
 ## Eastern Europe (0/2)
 
-- [ ] 🇨🇿 Czechia
-- [ ] 🇵🇱 Poland
+- [ ] Czechia
+- [ ] Poland
 
-## North America (1/2)
+## North America (0/2)
 
-- [x] 🇨🇦 Canada
-- [ ] 🇺🇸 USA
+- [ ] Canada
+- [ ] USA
 
-## Nordic Countries (3/3 Complete)
+## Nordic Countries (0/3)
 
-- [x] 🇩🇰 Denmark
-- [x] 🇳🇴 Norway
-- [x] 🇸🇪 Sweden
+- [ ] Denmark
+- [ ] Norway
+- [ ] Sweden
 
 ## Southern Europe (0/3)
 
-- [ ] 🇮🇹 Italy
-- [ ] 🇵🇹 Portugal
-- [ ] 🇪🇸 Spain
+- [ ] Italy
+- [ ] Portugal
+- [ ] Spain
 
 ## Western Europe (0/7)
 
-- [ ] 🇦🇹 Austria
-- [ ] 🇧🇪 Flanders
-- [ ] 🇫🇷 France
-- [ ] 🇩🇪 Germany
-- [ ] 🇳🇱 Netherlands
-- [ ] 🇨🇭 Switzerland
-- [ ] 🇧🇪 Wallonia
+- [ ] Austria
+- [ ] Flanders
+- [ ] France
+- [ ] Germany
+- [ ] Netherlands
+- [ ] Switzerland
+- [ ] Wallonia
