@@ -4,6 +4,8 @@ Web scraper for Canada universities.
 
 from typing import Dict, List
 
+SOURCE_URL = "https://example.com/canada"
 
-def scrape_universities(url: str) -> List[Dict[str, str]]:
+
+def scrape_universities() -> List[Dict[str, str]]:
     return []

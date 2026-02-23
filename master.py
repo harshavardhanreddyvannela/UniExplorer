@@ -1,11 +1,7 @@
 """
 Master orchestrator for web scraping universities across all countries.
-Reads configuration, runs country-specific scrapers, and uploads results to the database.
+Runs country-specific scrapers and uploads results to the database.
 """
-
-import csv
-import sys
-from typing import Dict
 
 from database import get_summary, get_total_count, initialize_db, insert_universities
 
@@ -72,35 +68,6 @@ SCRAPERS = {
 }
 
 
-def read_config(config_file: str = "config.csv") -> Dict[str, str]:
-    """
-    Read configuration file and return country-to-URL mapping.
-
-    Args:
-        config_file: Path to the CSV configuration file
-
-    Returns:
-        Dictionary with country names as keys and URLs as values
-    """
-    config = {}
-    try:
-        with open(config_file, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                country = row["country"].strip()
-                url = row["url"].strip()
-                config[country] = url
-        print(f"✓ Loaded {len(config)} countries from {config_file}\n")
-    except FileNotFoundError:
-        print(f"✗ Configuration file '{config_file}' not found!")
-        sys.exit(1)
-    except Exception as e:
-        print(f"✗ Error reading configuration: {str(e)}")
-        sys.exit(1)
-
-    return config
-
-
 def main():
     """Main orchestrator function."""
     print("=" * 60)
@@ -113,9 +80,6 @@ def main():
     initialize_db()
     print()
 
-    # Read configuration
-    config = read_config("config.csv")
-
     # Track results
     results = {}
     total_universities = 0
@@ -126,20 +90,12 @@ def main():
     print("=" * 60)
     print()
 
-    for country in config:
-        url = config[country]
+    for country, scraper_func in SCRAPERS.items():
         print(f"[{country}]")
-        print(f"  URL: {url}")
-
-        if country not in SCRAPERS:
-            print(f"  ✗ No scraper found for {country}")
-            results[country] = 0
-            continue
 
         try:
             # Call the country-specific scraper
-            scraper_func = SCRAPERS[country]
-            universities = scraper_func(url)
+            universities = scraper_func()
 
             # Insert results into database
             if universities:
