@@ -8,11 +8,10 @@ from database import get_summary, get_total_count, initialize_db, insert_univers
 # Import all country scrapers
 from scrapers.australia import scrape_universities as scrape_australia
 from scrapers.austria import scrape_universities as scrape_austria
+from scrapers.belgium import scrape_universities as scrape_belgium
 from scrapers.canada import scrape_universities as scrape_canada
 from scrapers.czechia import scrape_universities as scrape_czechia
 from scrapers.denmark import scrape_universities as scrape_denmark
-from scrapers.england import scrape_universities as scrape_england
-from scrapers.flanders import scrape_universities as scrape_flanders
 from scrapers.france import scrape_universities as scrape_france
 from scrapers.germany import scrape_universities as scrape_germany
 from scrapers.ireland import scrape_universities as scrape_ireland
@@ -20,20 +19,17 @@ from scrapers.italy import scrape_universities as scrape_italy
 from scrapers.japan import scrape_universities as scrape_japan
 from scrapers.netherlands import scrape_universities as scrape_netherlands
 from scrapers.new_zealand import scrape_universities as scrape_new_zealand
-from scrapers.northern_ireland import scrape_universities as scrape_northern_ireland
 from scrapers.norway import scrape_universities as scrape_norway
 from scrapers.poland import scrape_universities as scrape_poland
 from scrapers.portugal import scrape_universities as scrape_portugal
-from scrapers.scotland import scrape_universities as scrape_scotland
 from scrapers.singapore import scrape_universities as scrape_singapore
 from scrapers.south_korea import scrape_universities as scrape_south_korea
 from scrapers.spain import scrape_universities as scrape_spain
 from scrapers.sweden import scrape_universities as scrape_sweden
 from scrapers.switzerland import scrape_universities as scrape_switzerland
 from scrapers.taiwan import scrape_universities as scrape_taiwan
+from scrapers.united_kingdom import scrape_universities as scrape_united_kingdom
 from scrapers.usa import scrape_universities as scrape_usa
-from scrapers.wales import scrape_universities as scrape_wales
-from scrapers.wallonia import scrape_universities as scrape_wallonia
 
 # Mapping of country names to scraper functions
 SCRAPERS = {
@@ -42,8 +38,7 @@ SCRAPERS = {
     "Canada": scrape_canada,
     "Czechia": scrape_czechia,
     "Denmark": scrape_denmark,
-    "England": scrape_england,
-    "Flanders": scrape_flanders,
+    "Belgium": scrape_belgium,
     "France": scrape_france,
     "Germany": scrape_germany,
     "Ireland": scrape_ireland,
@@ -51,20 +46,17 @@ SCRAPERS = {
     "Japan": scrape_japan,
     "Netherlands": scrape_netherlands,
     "New Zealand": scrape_new_zealand,
-    "Northern Ireland": scrape_northern_ireland,
     "Norway": scrape_norway,
     "Poland": scrape_poland,
     "Portugal": scrape_portugal,
-    "Scotland": scrape_scotland,
     "Singapore": scrape_singapore,
     "South Korea": scrape_south_korea,
     "Spain": scrape_spain,
     "Sweden": scrape_sweden,
     "Switzerland": scrape_switzerland,
     "Taiwan": scrape_taiwan,
+    "United Kingdom": scrape_united_kingdom,
     "USA": scrape_usa,
-    "Wales": scrape_wales,
-    "Wallonia": scrape_wallonia,
 }
 
 
