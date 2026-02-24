@@ -11,9 +11,7 @@ from bs4 import BeautifulSoup
 
 SOURCE_URLS = {
     "universities": "https://www.bmfwf.gv.at/wissenschaft/hochschulsystem/unis/unis-liste.html",
-    "fachhochschulen": "https://www.bmfwf.gv.at/wissenschaft/hochschulsystem/fh/fh-liste.html",
     "private": "https://www.bmfwf.gv.at/wissenschaft/hochschulsystem/privatunis/privatunis-liste.html",
-    "paedagogische": "https://www.bmfwf.gv.at/wissenschaft/hochschulsystem/paedagogische-hochschulen.html",
 }
 
 BLOCKED_DOMAINS = (
@@ -36,16 +34,8 @@ PATTERNS = {
         r"(universität|university|akademie|mozarteum|montanuniversität|wirtschaftsuniversität)",
         re.IGNORECASE,
     ),
-    "fachhochschulen": re.compile(
-        r"(fachhochschule|hochschule für angewandte wissenschaften|\bfh\b|\bimc\b|\bmci\b|\bfhw\b|lauder business school|zentrum für gesundheitsberufe tirol|ferdinand porsche fernfachhochschule|fh gesundheitsberufe)",
-        re.IGNORECASE,
-    ),
     "private": re.compile(
         r"(privatunivers|privathochschule|private university|central european university|webster)",
-        re.IGNORECASE,
-    ),
-    "paedagogische": re.compile(
-        r"(pädagogische hochschule|paedagogische hochschule|hochschule für agrar- und umweltpädagogik|private pädagogische hochschule|kirchliche pädagogische hochschule)",
         re.IGNORECASE,
     ),
 }

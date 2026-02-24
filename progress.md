@@ -7,9 +7,9 @@
 | Eastern Europe   | 2         | 2      | ✅     |
 | North America    | 0         | 2      | ⏳     |
 | Nordic Countries | 3         | 3      | ✅     |
-| Southern Europe  | 0         | 3      | ⏳     |
+| Southern Europe  | 1         | 3      | 🔄     |
 | Western Europe   | 3         | 6      | 🔄     |
-| **TOTAL**        | **8**     | **24** | **33%**|
+| **TOTAL**        | **9**     | **24** | **38%**|
 
 ---
 
@@ -43,11 +43,11 @@
 - [x] Norway
 - [x] Sweden
 
-## Southern Europe (0/3)
+## Southern Europe (1/3) 🔄
 
 - [ ] Italy
 - [ ] Portugal
-- [ ] Spain
+- [x] Spain
 
 ## Western Europe (3/6) 🔄
 
@@ -62,7 +62,7 @@
 
 ## Summary
 
-### Completed: 8/24 countries
+### Completed: 9/24 countries
 
 ### Key Technical Features Implemented
 
@@ -72,16 +72,23 @@
 4. **Belgium**: Combined Flanders JSON API + Wallonia section-heading extraction with dedupe
 5. **Norway**: Section-indexed extraction (skip designated 4th section "Høgskular")
 6. **Sweden**: Section-based h2 tracking with name cleanup (webbplats suffix, genitive 's' removal)
-7. **Switzerland**: Generalized section-structure handling for complex federations like HES-SO
-   - Detects multi-section organizations via multiple P+UL patterns
-   - Extracts heading links for sections WITH links
-   - Extracts all sub-links for sections WITHOUT links
-   - Works for any accordion-based organization with this pattern
-8. **Poland**: RAD-on/POL-on API integration with token pagination and post-scrape filtering
-   - Filters: institution kinds (church/private/public) + operating status
-   - Maps official `www` field to `website`
-   - Drops church institutions that do not provide a website
+7. **Switzerland**: Generalized section-structure handling for complex federations and accordion-based organizations
+8. **Poland**: RAD-on/POL-on API integration with token pagination and filtered extraction
+9. **Spain**: RUCT Excel export download and parsing with filtered extraction
 
-### Remaining: 16/24 countries
+### Remaining: 15/24 countries
 
-Stubs to implement: Australia, Canada, France, Germany, Ireland, Italy, Japan, Netherlands, New Zealand, Portugal, Singapore, South Korea, Spain, Taiwan, USA, United Kingdom
+Stubs to implement: Australia, Canada, France, Germany, Ireland, Italy, Japan, Netherlands, New Zealand, Portugal, Singapore, South Korea, Taiwan, USA, United Kingdom
+
+---
+
+## Notes
+
+### Spain: Universities Without Websites
+
+The following 4 Spanish universities passed all RUCT filters but have no website listed in the official source Excel:
+
+- Universidad de Valladolid
+- Universidad de Zaragoza
+- Universidad Internacional de Andalucía
+- Universitat de Girona

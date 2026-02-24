@@ -10,6 +10,7 @@ import requests
 SOURCE_URL = "https://radon.nauka.gov.pl/opendata/polon/institutions"
 RESULTS_PER_PAGE = 100
 INSTITUTION_KINDS = ["1", "10", "13"]
+INSTITUTION_TYPES = ["1"]  # 1 = academic, 2 = vocational
 STATUS_CODES = ["1"]
 
 
@@ -28,6 +29,7 @@ def _normalize_website(url: str) -> str:
 def _build_base_params() -> List[tuple[str, str]]:
     params: List[tuple[str, str]] = [("resultNumbers", str(RESULTS_PER_PAGE))]
     params.extend(("iKindCd", kind) for kind in INSTITUTION_KINDS)
+    params.extend(("uTypeCd", utype) for utype in INSTITUTION_TYPES)
     params.extend(("statusCode", status) for status in STATUS_CODES)
     return params
 

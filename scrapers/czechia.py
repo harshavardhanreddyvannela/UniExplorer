@@ -12,7 +12,6 @@ from bs4 import BeautifulSoup
 SOURCE_URLS = [
     "https://msmt.gov.cz/areas-of-work/tertiary-education/public-higher-education-institutions-websites",
     "https://msmt.gov.cz/areas-of-work/tertiary-education/overview-of-private-higher-education-institutions",
-    "https://msmt.gov.cz/areas-of-work/tertiary-education/state-higher-education-institutions-websites",
 ]
 
 BLOCKED_DOMAINS = (
