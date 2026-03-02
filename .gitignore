@@ -1,77 +1,55 @@
-# Virtual environments
-.venv/
-venv/
-ENV/
-env/
+# OS
+.DS_Store
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Testing
-.pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
-.tox/
-.hypothesis/
-
-# IDEs
+# Editors
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
-.DS_Store
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+.python-version
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Node / frontend
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/dist/
+frontend/coverage/
+frontend/.turbo/
+frontend/.npm/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
 
 # Logs
 *.log
 logs/
 
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Database
-*.db
+# Databases / local state
 *.sqlite
 *.sqlite3
+*.db
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.bak
-*~
-
-# IDE specific
-.project
-.pydevproject
-.settings/
-
-# Misc
-.cache/
+# Build artifacts
+build/
+dist/

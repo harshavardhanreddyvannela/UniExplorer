@@ -1,0 +1,14 @@
+{
+  "ignorePatterns": [
+    "node_modules",
+    ".next",
+    "dist",
+    "coverage"
+  ],
+  "overrides": [
+    {
+      "files": ["app/**/*.ts", "app/**/*.tsx", "components/**/*.ts", "components/**/*.tsx", "lib/**/*.ts", "lib/**/*.tsx"],
+      "rules": {}
+    }
+  ]
+}
